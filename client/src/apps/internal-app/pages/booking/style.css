@@ -1,0 +1,17 @@
+.adminbody{
+   display: block; 
+   width: 100%;
+   margin: 50px;
+}
+.table{
+    padding-top: 20px;
+}
+
+.headerAdmin{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+

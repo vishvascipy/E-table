@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'primary-font';
+    src: url(../public/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf) format('truetype');
+}
+
+html{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    flex: 1;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+h4{
+    font-weight: bolder;
+}
+
+#root{
+    display: flex;
+    flex: 1
+}
+
+.App{
+    display: flex;
+    flex: 1
+}
