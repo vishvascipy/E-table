@@ -64,8 +64,6 @@ const InternalApp = () => {
           <Route path='/home' element={<AdminPage />} />
           <Route path='/home/addMenu' element={<PostMenu />} />
           <Route path='/home/viewfeedback' element={<Viewfeedback />} />
-          {/* <Route path='/admin' element={<MainAdmin />} /> */}
-
         </Routes>
         :
         <Dashboard />

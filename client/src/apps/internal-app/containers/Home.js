@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './css/Home.module.css'
 import axios from 'axios';
 import Card from './card'
@@ -7,6 +7,19 @@ import './style.css'
 
 const Home = () => {
 
+  const [result, setResult] = useState([])
+
+  useEffect(() => {
+    axios.get("restaurant/viewrestaurant")
+      .then((response) => {
+        console.log("from rest", response.data)
+        setResult(response.data)
+      })
+      .catch((err) => {
+        console.log("err from rest", err)
+      })
+  }, [])
+
   return (
     <>
       <div className='conatiner'>
@@ -14,7 +27,12 @@ const Home = () => {
           <h1> <b>Select Your Resturants </b></h1>
         </div>
         <div className='cards'>
-          <Card
+          {result.map((item, index) => (
+            <Card key={index} title={item.name}
+              img={item.img}
+            />
+          ))}
+          {/* <Card
             img='https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=510&q=80'
             title='Zam Zam'
             author='Palayam,Trivandrum'
@@ -63,7 +81,7 @@ const Home = () => {
             img='https://images.unsplash.com/photo-1526318896980-cf78c088247c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
             title='Chineese Hut'
             author='MOT,Trivandrum'
-            des="Chineese Noodles" />
+            des="Chineese Noodles" /> */}
         </div>
       </div>
 

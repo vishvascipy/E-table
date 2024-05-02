@@ -9,6 +9,7 @@ const menu = require("./routes/menuRouter")
 const feedback = require("./routes/feedbackRouter")
 const cart = require("./routes/CartRouter")
 const admin = require("./routes/adminRouter")
+const restaurant = require("./routes/restaurantRouter")
 
 //app
 const express = require('express');
@@ -33,5 +34,6 @@ app.use("/menuRoute", menu)
 app.use("/feedback", feedback)
 app.use("/cart", cart)
 app.use("/admin", admin)
+app.use("/restaurant", restaurant)
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

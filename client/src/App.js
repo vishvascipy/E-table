@@ -40,6 +40,8 @@ const App = () => {
         :
         <AuthApp />
       }
+
+      
     </div>
   );
 }

@@ -40,7 +40,9 @@ const Login = () => {
     }
 
     return (
+
         <div className={styles.Login}>
+            <h1>Multi Hotel Dining Delights</h1>
             <div className={styles.Form}>
                 <div className={styles.Username}>
                     <label>Username</label>
