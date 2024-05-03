@@ -27,7 +27,7 @@ function ViewCart() {
     event.preventDefault()
     let cartData = {
       RestaurantName: cartdata.RestaurantName.restaurantName,
-      userid: cartdata.id.userid.id,
+      userid: cartdata.userid.userId.id,
       TotalAmount: totalPrice,
       cart: cartArray.map(item => ({
         img: item.img,
