@@ -10,8 +10,10 @@ import TablesTypeThree from 'apps/internal-app/components/TablesTypeThree'
 import PopUp from 'apps/internal-app/components/PopUp'
 import axios from 'axios';
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 const TablesPage = () => {
+    const navigate = useNavigate()
     const [queryParameters] = useSearchParams()
     const companyName = queryParameters.get("companyName")
 
@@ -120,12 +122,15 @@ const TablesPage = () => {
 
         return slicedMap;
     }
+    const back = () => {
+        navigate(`/booking/?companyName=${companyName}`)
+    }
 
     return (
         <div className={styles.TablesPage} style={{ cursor: hovering }}>
             <div className={styles.Header}>
                 <div className={styles.Exit}>
-                    <Link to='/home'>EXIT</Link>
+                    <button type="button" class="btn btn-link" onClick={back}>Exit</button>
                 </div>
                 {(startDate) &&
                     <div className={styles.Info}>
